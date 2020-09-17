@@ -76,13 +76,12 @@
         .getElementById("add-btn")
         .addEventListener("click", function (event) {
           event.preventDefault();
-          var newFaction = {
+          let newFaction = {
             name: document.getElementById("name").value.trim(),
             crafting: document.getElementById("crafting-power").value.trim(),
             age: document.getElementById("number-of-warriors").value.trim(),
           };
 
-          // Question: What does this code do??
           fetch("/api/factions", {
             method: "POST",
             body: JSON.stringify(newFaction),
